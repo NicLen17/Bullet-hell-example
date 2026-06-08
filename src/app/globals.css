@@ -1,0 +1,239 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #dc2626;
+  --color-primary-dark: #b91c1c;
+  --color-secondary: #0a0a0a;
+  --color-accent: #22c55e;
+  --color-accent-muted: #16a34a;
+  --font-sans: var(--font-geist-sans), system-ui, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+  background-color: var(--color-secondary);
+  color: white;
+  cursor: none;
+  user-select: none;
+}
+
+body.game-menu {
+  cursor: default;
+}
+
+@keyframes screen-shake {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  10% {
+    transform: translate(-12px, 6px);
+  }
+  20% {
+    transform: translate(10px, -8px);
+  }
+  30% {
+    transform: translate(-8px, -6px);
+  }
+  40% {
+    transform: translate(14px, 4px);
+  }
+  50% {
+    transform: translate(-10px, 8px);
+  }
+  60% {
+    transform: translate(8px, -4px);
+  }
+  70% {
+    transform: translate(-6px, 6px);
+  }
+  80% {
+    transform: translate(6px, -2px);
+  }
+  90% {
+    transform: translate(-4px, 2px);
+  }
+}
+
+@keyframes impact-flash {
+  0% {
+    opacity: 0.95;
+  }
+  40% {
+    opacity: 0.75;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes float-up {
+  0% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1.2);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -120%) scale(0.9);
+  }
+}
+
+@keyframes float-up-loss {
+  0% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1.5);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -140%) scale(1.1);
+  }
+}
+
+@keyframes score-punch {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.08);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes multiplier-glow {
+  0%,
+  100% {
+    box-shadow: 0 0 12px rgba(34, 197, 94, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 28px rgba(34, 197, 94, 0.85);
+  }
+}
+
+@keyframes pulse-danger {
+  0%,
+  100% {
+    filter: brightness(1);
+  }
+  50% {
+    filter: brightness(1.25);
+  }
+}
+
+@keyframes muzzle-flash {
+  0%,
+  70%,
+  100% {
+    opacity: 0.3;
+    transform: scale(0.8);
+  }
+  75% {
+    opacity: 1;
+    transform: scale(1.4);
+  }
+}
+
+@keyframes shield-float {
+  0%,
+  100% {
+    transform: translate(-50%, -50%) translateY(0);
+  }
+  50% {
+    transform: translate(-50%, -50%) translateY(-8px);
+  }
+}
+
+@keyframes shield-aura {
+  0%,
+  100% {
+    opacity: 0.25;
+  }
+  50% {
+    opacity: 0.55;
+  }
+}
+
+@keyframes plane-blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.35;
+  }
+}
+
+.animate-screen-shake {
+  animation: screen-shake 0.42s ease-out;
+}
+
+.animate-impact-flash {
+  animation: impact-flash 0.22s ease-out forwards;
+}
+
+.animate-float-up {
+  animation: float-up 0.9s ease-out forwards;
+}
+
+.animate-float-up-loss {
+  animation: float-up-loss 0.9s ease-out forwards;
+}
+
+.animate-score-punch {
+  animation: score-punch 0.28s ease-out;
+}
+
+.animate-multiplier-glow {
+  animation: multiplier-glow 1.2s ease-in-out infinite;
+}
+
+.animate-pulse-danger {
+  animation: pulse-danger 0.8s ease-in-out infinite;
+}
+
+.animate-muzzle-flash {
+  animation: muzzle-flash 1.5s ease-in-out infinite;
+}
+
+.animate-shield-float {
+  animation: shield-float 1.6s ease-in-out infinite;
+}
+
+.animate-shield-aura {
+  animation: shield-aura 1s ease-in-out infinite;
+}
+
+.animate-plane-blink {
+  animation: plane-blink 0.12s step-end infinite;
+}
+
+@keyframes frenzy-vignette {
+  0%,
+  100% {
+    opacity: 0.15;
+  }
+  50% {
+    opacity: 0.35;
+  }
+}
+
+.animate-frenzy-vignette {
+  animation: frenzy-vignette 1.5s ease-in-out infinite;
+}
+
+.text-shadow-glow-accent {
+  text-shadow: 0 0 12px #22c55e, 0 0 24px #22c55e;
+}
+
+.text-shadow-glow-primary {
+  text-shadow: 0 0 16px #dc2626, 0 0 32px #b91c1c;
+}
